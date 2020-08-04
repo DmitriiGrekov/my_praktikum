@@ -1,0 +1,38 @@
+Добавление записей в бд
+INSERT INTO author (name,birth_year) VALUES ('Человек без селезенки',1860);
+
+Чтение записей из бд
+SELECT id,name,birth_year FROM author;
+SELECT * FROM author;
+
+DISTINCT - чтобы показать только записи, содержащие в определённом поле уникальное значение
+SELECT id,name,DISTINCT birth_year FORM author;
+
+Если мы хотим получить какую-то определённую запись, то в запросе надо указать условия. Для этого существует команда WHERE;
+SELECT * FROM author WHERE id=3;
+
+
+
+Изменение записей: UPDATE
+Для обновления данных в сущетсвующей записи предназначена команда UPDATE
+
+UPDATE <таблица>
+SET <столбец> = <значение>
+WHERE <условие>;
+
+UPDATE author SET name='Антон Чехов' WHERE id=1;
+
+
+Удаление записей DELETE
+DELETE FROM <таблица> WHERE <условие>;
+DELETE FROM author WHERE id=4;
+
+
+Условия запроса WHERE:
+WHERE позволяет использовать множество условий одновременно. Для объединения сразу нескольких условий используются опаераторы AND,OR или NOT
+SELECT id,name FROM author WHERE birth_year=1860 OR birth_year=1899;
+
+
+
+
+
